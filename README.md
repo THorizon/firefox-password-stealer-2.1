@@ -5,4 +5,4 @@ It copies the password and saves it inside of a text document on a USB stick/dri
 I personally use this script on my Malduino but it works on other BadUSB sticks as well.
 
 P.S. The previous version of the Firefox Passsword Stealer no longer works.
-It currently works on Firefox version 87.0
+FFPS 2.1 currently works on Firefox version 87.0
